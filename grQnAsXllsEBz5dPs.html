@@ -1,0 +1,821 @@
+<html><head><base href="https://example.com"><title>Formation QHSE Interactive</title><style>
+  :root {
+    --primary-color: #1a237e;
+    --secondary-color: #283593;
+    --accent-color: #4caf50;
+    --light-bg: #f5f7fa;
+    --text-color: #37474f;
+    --hover-color: #43a047;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f7fa;
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 50px 0;
+    border-radius: 0 0 30px 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+  }
+
+  .header h1 {
+    font-size: 3.2em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .header p {
+    font-size: 1.6em;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+  }
+
+  .developer-info {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2em;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .developer-info:hover {
+    transform: scale(1.05);
+  }
+
+  .module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 35px;
+    margin-top: 40px;
+  }
+
+  .module-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    pointer-events: none;
+  }
+
+  .module-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .module-card h3 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    margin: 25px 0;
+    font-weight: 700;
+  }
+
+  .hexagon-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 25px;
+    fill: var(--accent-color);
+  }
+
+  .module-card ul {
+    padding-left: 25px;
+    margin: 25px 0;
+  }
+
+  .module-card li {
+    margin: 12px 0;
+    color: var(--text-color);
+    font-size: 1.1em;
+    line-height: 1.8;
+  }
+
+  .progress-container {
+    display: none;
+  }
+
+  .progress-bar {
+    display: none;
+  }
+
+  .btn {
+    background: linear-gradient(45deg, var(--accent-color), var(--hover-color));
+    color: white;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 1.2em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+    width: 100%;
+    transition: background 0.3s ease, transform 0.2s ease;
+    pointer-events: auto;
+  }
+
+  .btn:hover {
+    background: linear-gradient(45deg, var(--hover-color), var(--accent-color));
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+  }
+
+  .course-content {
+    display: none;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+
+  .course-content.active {
+    display: block;
+  }
+
+  .sub-topics {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--light-bg);
+    border-radius: 8px;
+  }
+
+  .back-btn {
+    background-color: var(--secondary-color);
+    margin-bottom: 20px;
+  }
+
+  .chapter-content {
+    background: white;
+    border-radius: 15px;
+    padding: 35px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  }
+
+  .chapter-title {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+  }
+
+  .topic-content {
+    margin: 20px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .key-points {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    padding: 25px;
+    border-radius: 12px;
+    margin: 25px 0;
+  }
+
+  .key-points h4 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+  }
+
+  .key-points ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .example-box {
+    background: #fff3e0;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+  }
+
+  .exercise {
+    background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+    padding: 25px;
+    border-radius: 12px;
+    margin: 25px 0;
+  }
+
+  .learning-objective {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    padding: 25px;
+    border-radius: 12px;
+    margin: 25px 0;
+  }
+
+  .learning-objective h4 {
+    color: #2196f3;
+    margin-bottom: 10px;
+  }
+
+  .practical-case {
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    padding: 25px;
+    border-radius: 12px;
+    margin: 25px 0;
+  }
+
+  .summary-section {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+
+  .quiz-section {
+    background: #e1f5fe;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal.active {
+    display: flex;
+  }
+
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+  }
+
+  .modal-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    display: block;
+    border-radius: 8px;
+  }
+
+  .close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+  }
+</style></head><body>
+<div class="container">
+  <div class="header">
+    <h1>Formation Compl&#xe8;te QHSE</h1>
+    <p>Qualit&#xe9;, Hygi&#xe8;ne, S&#xe9;curit&#xe9; et Environnement</p>
+    <div class="developer-info" onclick="openModal()">D&#xe9;velopp&#xe9; par Emmanuel Gloire MAMBOUANA</div>
+  </div>
+
+  <div id="modules-view" class="module-grid">
+    <!-- Module 1 -->
+    <div class="module-card" data-module="1">
+      <svg class="hexagon-icon" viewBox="0 0 24 24">
+        <path d="M12 2L4 7v10l8 5 8-5V7l-8-5zm0 18l-6-3.75V8.5l6 3.75 6-3.75v7.75L12 20z"/>
+      </svg>
+      <h3>Introduction au QHSE</h3>
+      <ul>
+        <li>Fondamentaux et d&#xe9;finitions</li>
+        <li>Cadre r&#xe9;glementaire</li>
+        <li>Enjeux et objectifs</li>
+      </ul>
+      <button class="btn" onclick="showCourse(1)">Commencer</button>
+    </div>
+
+    <!-- Module 2 -->
+    <div class="module-card" data-module="2">
+      <svg class="hexagon-icon" viewBox="0 0 24 24">
+        <path d="M19.5 3h-15A1.5 1.5 0 003 4.5v15A1.5 1.5 0 004.5 21h15a1.5 1.5 0 001.5-1.5v-15A1.5 1.5 0 0019.5 3zm-15 1.5h15v15h-15v-15z"/>
+      </svg>
+      <h3>Syst&#xe8;me de Management Qualit&#xe9;</h3>
+      <ul>
+        <li>ISO 9001:2015</li>
+        <li>Processus et proc&#xe9;dures</li>
+        <li>Indicateurs de performance</li>
+      </ul>
+      <button class="btn" onclick="showCourse(2)">Commencer</button>
+    </div>
+
+    <!-- Module 3 -->
+    <div class="module-card" data-module="3">
+      <svg class="hexagon-icon" viewBox="0 0 24 24">
+        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+      </svg>
+      <h3>Sant&#xe9; et S&#xe9;curit&#xe9; au Travail</h3>
+      <ul>
+        <li>ISO 45001</li>
+        <li>&#xc9;valuation des risques</li>
+        <li>Plans de pr&#xe9;vention</li>
+      </ul>
+      <button class="btn" onclick="showCourse(3)">Commencer</button>
+    </div>
+
+    <!-- Module 4 -->
+    <div class="module-card" data-module="4">
+      <svg class="hexagon-icon" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+      </svg>
+      <h3>Management Environnemental</h3>
+      <ul>
+        <li>ISO 14001</li>
+        <li>Aspects environnementaux</li>
+        <li>Gestion des d&#xe9;chets</li>
+      </ul>
+      <button class="btn" onclick="showCourse(4)">Commencer</button>
+    </div>
+  </div>
+
+  <!-- Enhanced Course Content Views -->
+  <div id="course-view" style="display: none;">
+    <button class="btn back-btn" onclick="showModules()">Retour aux modules</button>
+    
+    <!-- Course 1 Content - Enhanced -->
+    <div id="course-1" class="course-content">
+      <h2>Introduction au QHSE</h2>
+      
+      <div class="chapter-content">
+        <h3 class="chapter-title">1. Fondamentaux et d&#xe9;finitions</h3>
+        
+        <div class="learning-objective">
+          <h4>Objectifs d&apos;apprentissage :</h4>
+          <ul>
+            <li>Comprendre les concepts fondamentaux du QHSE</li>
+            <li>Identifier les interactions entre les diff&#xe9;rentes composantes</li>
+            <li>Ma&#xee;triser le vocabulaire technique du domaine</li>
+          </ul>
+        </div>
+
+        <div class="topic-content">
+          <h4>1.1 Qu&apos;est-ce que le QHSE ?</h4>
+          <p>Le QHSE est un syst&#xe8;me de management int&#xe9;gr&#xe9; qui regroupe quatre domaines essentiels :</p>
+          
+          <div class="key-points">
+            <h4>Composantes principales :</h4>
+            <ul>
+              <li><strong>Qualit&#xe9; (Q) :</strong> Ensemble des caract&#xe9;ristiques qui permettent de satisfaire les exigences explicites et implicites des clients. Elle inclut :
+                <ul>
+                  <li>La conformit&#xe9; aux sp&#xe9;cifications</li>
+                  <li>L&apos;am&#xe9;lioration continue</li>
+                  <li>La satisfaction client</li>
+                </ul>
+              </li>
+              <li><strong>Hygi&#xe8;ne (H) :</strong> Ensemble des mesures visant &#xe0; garantir la propret&#xe9; et la salubrit&#xe9; :
+                <ul>
+                  <li>Protocoles de nettoyage</li>
+                  <li>R&#xe8;gles d&apos;hygi&#xe8;ne personnelle</li>
+                  <li>Contr&#xf4;le des contaminations</li>
+                </ul>
+              </li>
+              <li><strong>S&#xe9;curit&#xe9; (S) :</strong> Mesures destin&#xe9;es &#xe0; pr&#xe9;venir les accidents et prot&#xe9;ger la sant&#xe9; :
+                <ul>
+                  <li>Pr&#xe9;vention des risques</li>
+                  <li>&#xc9;quipements de protection</li>
+                  <li>Proc&#xe9;dures d&apos;urgence</li>
+                </ul>
+              </li>
+              <li><strong>Environnement (E) :</strong> Actions pour pr&#xe9;server l&apos;environnement :
+                <ul>
+                  <li>Gestion des d&#xe9;chets</li>
+                  <li>&#xc9;conomie d&apos;&#xe9;nergie</li>
+                  <li>Protection des ressources</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="practical-case">
+            <h4>Cas pratique : Application dans une entreprise manufacturi&#xe8;re</h4>
+            <p>L&apos;entreprise XYZ fabrique des composants &#xe9;lectroniques. Voici comment le QHSE s&apos;applique :</p>
+            <ul>
+              <li>Risques identifi&#xe9;s</li>
+              <li>Mesures de pr&#xe9;vention</li>
+              <li>&#xc9;quipements de protection</li>
+            </ul>
+          </div>
+
+          <div class="exercise">
+            <h4>Exercice d&apos;application :</h4>
+            <p>Identifiez dans votre contexte professionnel :</p>
+            <ol>
+              <li>Trois aspects qualit&#xe9; importants</li>
+              <li>Deux r&#xe8;gles d&apos;hygi&#xe8;ne essentielles</li>
+              <li>Trois risques de s&#xe9;curit&#xe9; majeurs</li>
+              <li>Deux impacts environnementaux significatifs</li>
+            </ol>
+          </div>
+
+          <div class="summary-section">
+            <h4>Points &#xe0; retenir :</h4>
+            <ul>
+              <li>Le QHSE est un syst&#xe8;me int&#xe9;gr&#xe9; qui combine 4 domaines compl&#xe9;mentaires</li>
+              <li>Chaque composante contribue &#xe0; la performance globale de l&apos;organisation</li>
+              <li>L&apos;approche syst&#xe9;matique permet une meilleure gestion des risques</li>
+              <li>La documentation et la tra&#xe7;abilit&#xe9; sont essentielles</li>
+            </ul>
+          </div>
+
+          <div class="quiz-section">
+            <h4>Quiz de compr&#xe9;hension :</h4>
+            <ol>
+              <li>Quelle composante du QHSE traite de la satisfaction client ?</li>
+              <li>Citez deux exemples de mesures d&apos;hygi&#xe8;ne en entreprise.</li>
+              <li>Quel est le principal objectif de la composante s&#xe9;curit&#xe9; ?</li>
+              <li>Comment l&apos;environnement s&apos;int&#xe8;gre-t-il dans le syst&#xe8;me QHSE ?</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Course 2 Content - Enhanced -->
+    <div id="course-2" class="course-content">
+      <h2>Syst&#xe8;me de Management Qualit&#xe9;</h2>
+      
+      <div class="chapter-content">
+        <h3 class="chapter-title">1. ISO 9001:2015 et Management de la Qualit&#xe9;</h3>
+        
+        <div class="learning-objective">
+          <h4>Objectifs d&apos;apprentissage :</h4>
+          <ul>
+            <li>Comprendre les exigences de la norme ISO 9001:2015</li>
+            <li>Ma&#xee;triser l&apos;approche processus</li>
+            <li>Savoir mettre en &#x153;uvre un syst&#xe8;me de management de la qualit&#xe9;</li>
+          </ul>
+        </div>
+
+        <div class="topic-content">
+          <h4>1.1 Les principes fondamentaux de l&apos;ISO 9001:2015</h4>
+          
+          <div class="key-points">
+            <h4>Les 7 principes en d&#xe9;tail :</h4>
+            <ul>
+              <li><strong>Orientation client :</strong>
+                <ul>
+                  <li>Comprendre les besoins actuels et futurs</li>
+                  <li>Satisfaire les exigences clients</li>
+                  <li>D&#xe9;passer les attentes des clients</li>
+                </ul>
+              </li>
+              <li><strong>Leadership :</strong>
+                <ul>
+                  <li>&#xc9;tablir une vision claire</li>
+                  <li>Cr&#xe9;er un environnement propice</li>
+                  <li>Engager les personnes</li>
+                </ul>
+              </li>
+              <li><strong>Implication du personnel :</strong>
+                <ul>
+                  <li>D&#xe9;veloppement des comp&#xe9;tences</li>
+                  <li>Responsabilisation</li>
+                  <li>Reconnaissance</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="practical-case">
+            <h4>Cas pratique : Mise en place d&apos;un SMQ</h4>
+            <p>Exemple de d&#xe9;ploiement dans une entreprise industrielle :</p>
+            <ol>
+              <li>Analyse du contexte</li>
+              <li>Identification des processus</li>
+              <li>D&#xe9;finition des indicateurs</li>
+              <li>Plan d&apos;am&#xe9;lioration continue</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="chapter-content">
+        <h3 class="chapter-title">2. Processus et Proc&#xe9;dures</h3>
+        
+        <div class="learning-objective">
+          <h4>Objectifs d&apos;apprentissage :</h4>
+          <ul>
+            <li>Ma&#xee;triser l&apos;approche processus</li>
+            <li>Savoir cartographier les processus</li>
+            <li>R&#xe9;diger des proc&#xe9;dures efficaces</li>
+          </ul>
+        </div>
+
+        <div class="topic-content">
+          <h4>2.1 Cartographie des processus</h4>
+          
+          <div class="key-points">
+            <h4>Types de processus :</h4>
+            <ul>
+              <li><strong>Processus de management :</strong>
+                <ul>
+                  <li>Strat&#xe9;gie et planification</li>
+                  <li>Revue de direction</li>
+                  <li>Communication</li>
+                </ul>
+              </li>
+              <li><strong>Processus op&#xe9;rationnels :</strong>
+                <ul>
+                  <li>Production/Service</li>
+                  <li>Commercial</li>
+                  <li>Innovation</li>
+                </ul>
+              </li>
+              <li><strong>Processus support :</strong>
+                <ul>
+                  <li>RH</li>
+                  <li>Achats</li>
+                  <li>Maintenance</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="practical-case">
+            <h4>Cas pratique : &#xc9;laboration d&apos;une cartographie</h4>
+            <p>Pour une entreprise de service :</p>
+            <ol>
+              <li>Identification des processus cl&#xe9;s</li>
+              <li>D&#xe9;finition des interfaces</li>
+              <li>&#xc9;tablissement des indicateurs</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Course 3 Content - Enhanced -->
+    <div id="course-3" class="course-content">
+      <h2>Sant&#xe9; et S&#xe9;curit&#xe9; au Travail</h2>
+      
+      <div class="chapter-content">
+        <h3 class="chapter-title">1. Management de la S&#xe9;curit&#xe9; selon ISO 45001</h3>
+        
+        <div class="learning-objective">
+          <h4>Objectifs d&apos;apprentissage :</h4>
+          <ul>
+            <li>Comprendre les exigences de l&apos;ISO 45001</li>
+            <li>Ma&#xee;triser l&apos;&#xe9;valuation des risques professionnels</li>
+            <li>Savoir mettre en place des mesures de pr&#xe9;vention efficaces</li>
+          </ul>
+        </div>
+
+        <div class="topic-content">
+          <h4>1.1 &#xc9;valuation des risques professionnels</h4>
+          
+          <div class="key-points">
+            <h4>M&#xe9;thodologie d&apos;&#xe9;valuation :</h4>
+            <ul>
+              <li><strong>Identification des dangers :</strong>
+                <ul>
+                  <li>Dangers physiques</li>
+                  <li>Dangers chimiques</li>
+                  <li>Dangers biologiques</li>
+                  <li>Dangers psychosociaux</li>
+                </ul>
+              </li>
+              <li><strong>Analyse des risques :</strong>
+                <ul>
+                  <li>Probabilit&#xe9; d&apos;occurrence</li>
+                  <li>Gravit&#xe9; potentielle</li>
+                  <li>Fr&#xe9;quence d&apos;exposition</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="practical-case">
+            <h4>Exemple d&apos;&#xe9;valuation des risques</h4>
+            <p>Cas d&apos;un poste de soudure :</p>
+            <ul>
+              <li>Risques identifi&#xe9;s</li>
+              <li>Mesures de pr&#xe9;vention</li>
+              <li>&#xc9;quipements de protection</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="chapter-content">
+        <h3 class="chapter-title">2. Plans de Pr&#xe9;vention</h3>
+        
+        <div class="learning-objective">
+          <h4>Objectifs :</h4>
+          <ul>
+            <li>Comprendre l&apos;importance des plans de pr&#xe9;vention</li>
+            <li>Savoir &#xe9;laborer un plan de pr&#xe9;vention</li>
+            <li>Mettre en &#x153;uvre les mesures pr&#xe9;ventives</li>
+          </ul>
+        </div>
+
+        <div class="topic-content">
+          <h4>2.1 &#xc9;laboration du plan de pr&#xe9;vention</h4>
+          
+          <div class="key-points">
+            <h4>&#xc9;l&#xe9;ments essentiels :</h4>
+            <ul>
+              <li><strong>Analyse pr&#xe9;alable :</strong>
+                <ul>
+                  <li>Identification des risques</li>
+                  <li>&#xc9;valuation des interactions</li>
+                  <li>D&#xe9;finition des zones &#xe0; risques</li>
+                </ul>
+              </li>
+              <li><strong>Mesures de pr&#xe9;vention :</strong>
+                <ul>
+                  <li>Consignes de s&#xe9;curit&#xe9;</li>
+                  <li>EPI n&#xe9;cessaires</li>
+                  <li>Proc&#xe9;dures d&apos;urgence</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Course 4 Content - Enhanced -->
+    <div id="course-4" class="course-content">
+      <h2>Management Environnemental</h2>
+      
+      <div class="chapter-content">
+        <h3 class="chapter-title">1. Syst&#xe8;me de Management Environnemental ISO 14001</h3>
+        
+        <div class="learning-objective">
+          <h4>Objectifs d&apos;apprentissage :</h4>
+          <ul>
+            <li>Comprendre les principes de l&apos;ISO 14001</li>
+            <li>Identifier et &#xe9;valuer les aspects environnementaux</li>
+            <li>Mettre en place des actions d&apos;am&#xe9;lioration environnementale</li>
+          </ul>
+        </div>
+
+        <div class="topic-content">
+          <h4>1.1 Aspects et impacts environnementaux</h4>
+          
+          <div class="key-points">
+            <h4>Domaines d&apos;impact :</h4>
+            <ul>
+              <li><strong>Gestion des ressources :</strong>
+                <ul>
+                  <li>Consommation d&apos;eau</li>
+                  <li>Utilisation d&apos;&#xe9;nergie</li>
+                  <li>Mati&#xe8;res premi&#xe8;res</li>
+                </ul>
+              </li>
+              <li><strong>Gestion des d&#xe9;chets :</strong>
+                <ul>
+                  <li>Tri s&#xe9;lectif</li>
+                  <li>Valorisation</li>
+                  <li>&#xc9;limination conforme</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="practical-case">
+            <h4>&#xc9;tude de cas environnemental</h4>
+            <p>R&#xe9;duction de l&apos;impact environnemental d&apos;un site industriel :</p>
+            <ol>
+              <li>Audit initial</li>
+              <li>Plan d&apos;action</li>
+              <li>Mesures correctives</li>
+              <li>Suivi des r&#xe9;sultats</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="chapter-content">
+        <h3 class="chapter-title">2. Gestion des D&#xe9;chets</h3>
+        
+        <div class="learning-objective">
+          <h4>Objectifs :</h4>
+          <ul>
+            <li>Comprendre les diff&#xe9;rentes cat&#xe9;gories de d&#xe9;chets</li>
+            <li>Ma&#xee;triser les fili&#xe8;res de traitement</li>
+            <li>Optimiser la gestion des d&#xe9;chets</li>
+          </ul>
+        </div>
+
+        <div class="topic-content">
+          <h4>2.1 Classification des d&#xe9;chets</h4>
+          
+          <div class="key-points">
+            <h4>Types de d&#xe9;chets :</h4>
+            <ul>
+              <li><strong>D&#xe9;chets non dangereux :</strong>
+                <ul>
+                  <li>Papier/carton</li>
+                  <li>Plastiques</li>
+                  <li>M&#xe9;taux</li>
+                </ul>
+              </li>
+              <li><strong>D&#xe9;chets dangereux :</strong>
+                <ul>
+                  <li>Produits chimiques</li>
+                  <li>Huiles usag&#xe9;es</li>
+                  <li>Batteries</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="practical-case">
+            <h4>Cas pratique : Plan de gestion des d&#xe9;chets</h4>
+            <p>Pour un site industriel :</p>
+            <ol>
+              <li>Inventaire des d&#xe9;chets</li>
+              <li>Choix des fili&#xe8;res</li>
+              <li>Mise en place du tri</li>
+              <li>Suivi et tra&#xe7;abilit&#xe9;</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="developerModal" class="modal">
+  <button class="close-modal" onclick="closeModal()">&#xd7;</button>
+  <div class="modal-content">
+    <img src="/a/02da619d-b912-4318-9791-e30fc8ff31bd" alt="Emmanuel Gloire MAMBOUANA">
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Only keep modal and navigation functionality
+  document.getElementById('developerModal').addEventListener('click', function (e) {
+    if (e.target === this) {
+      closeModal();
+    }
+  });
+  
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeModal();
+    }
+  });
+});
+
+// Simple navigation functions
+function showCourse(courseId) {
+  document.getElementById('modules-view').style.display = 'none';
+  document.getElementById('course-view').style.display = 'block';
+  document.querySelectorAll('.course-content').forEach(content => {
+    content.classList.remove('active');
+  });
+  document.getElementById(`course-${courseId}`).classList.add('active');
+}
+
+function showModules() {
+  document.getElementById('modules-view').style.display = 'grid';
+  document.getElementById('course-view').style.display = 'none';
+}
+
+function openModal() {
+  document.getElementById('developerModal').classList.add('active');
+}
+
+function closeModal() {
+  document.getElementById('developerModal').classList.remove('active');
+}
+</script>
+</body></html>
